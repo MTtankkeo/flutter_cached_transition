@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_cached_transition/components/cached_transition_context.dart';
 import 'package:flutter_cached_transition/components/cached_transition_controller.dart';
-import 'package:flutter_cached_transition/widgets/cacehd_transition_stack.dart';
+import 'package:flutter_cached_transition/widgets/cached_transition_stack.dart';
 
 /// Signature for builders used to generate custom transitions for
 /// [CachedTransition].

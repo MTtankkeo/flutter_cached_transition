@@ -24,6 +24,7 @@ class _RootAppState extends State<RootApp> {
           child: Center(
             child: Column(
               mainAxisSize: MainAxisSize.min,
+              spacing: 15,
               children: [
                 CachedTransition(
                   duration: Duration(milliseconds: 500),
@@ -40,18 +41,24 @@ class _RootAppState extends State<RootApp> {
                   },
                   child: Counter(key: ValueKey(_index)),
                 ),
-                FilledButton(
-                  onPressed: () => setState(() => _index = 0),
-                  child: Text("Move to 0"),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  spacing: 8,
+                  children: [
+                    FilledButton(
+                      onPressed: () => setState(() => _index = 0),
+                      child: Text("Move to 0"),
+                    ),
+                    FilledButton(
+                      onPressed: () => setState(() => _index = 1),
+                      child: Text("Move to 1"),
+                    ),
+                    FilledButton(
+                      onPressed: () => setState(() => _index = 2),
+                      child: Text("Move to 2"),
+                    ),
+                  ],
                 ),
-                FilledButton(
-                  onPressed: () => setState(() => _index = 1),
-                  child: Text("Move to 1"),
-                ),
-                FilledButton(
-                  onPressed: () => setState(() => _index = 2),
-                  child: Text("Move to 2"),
-                )
               ],
             ),
           ),
