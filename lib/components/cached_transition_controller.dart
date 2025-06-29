@@ -42,4 +42,10 @@ class CachedTransitionController<T extends CachedTransitionState> {
   T createState(Widget widget) {
     return CachedTransitionState(widget: widget, context: context) as T;
   }
+
+  void dispose() {
+    for (final T state in states.values) {
+      state.dispose();
+    }
+  }
 }

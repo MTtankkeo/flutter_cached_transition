@@ -1,6 +1,6 @@
 name: flutter_cached_transition
 description: "This package provides customizable widgets that preserve widget state while applying transition animations."
-version: 1.0.0
+version: 1.0.1
 publisher: ttankkeo112@gmail.com
 repository: https://github.com/MTtankkeo/flutter_cached_transition
 

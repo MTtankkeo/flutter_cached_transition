@@ -60,4 +60,11 @@ class CachedTransitionState {
     _secondaryAnimation.reset();
     _secondaryAnimation.forward();
   }
+
+  void dispose() {
+    _primaryAnimation.dispose();
+    _primaryCurved.dispose();
+    _secondaryAnimation.dispose();
+    _secondaryCurved.dispose();
+  }
 }

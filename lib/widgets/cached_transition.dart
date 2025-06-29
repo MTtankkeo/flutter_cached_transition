@@ -63,6 +63,12 @@ class _CachedTransitionState extends State<CachedTransition>
   }
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     assert(widget.child.key != null, "A child must always have a key.");
 
