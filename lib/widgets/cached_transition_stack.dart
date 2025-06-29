@@ -1,8 +1,8 @@
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
-class CacehdTransitionStack extends MultiChildRenderObjectWidget {
-  const CacehdTransitionStack({
+class CachedTransitionStack extends MultiChildRenderObjectWidget {
+  const CachedTransitionStack({
     super.key,
     required this.primaryKey,
     required this.secondaryKey,
@@ -125,7 +125,7 @@ class CachedTransitionStackParent extends ParentDataWidget<_ParentData> {
   Type get debugTypicalAncestorWidgetClass => RenderCacehdTransitionStack;
 }
 
-/// Parent data for use with [CacehdTransitionStack].
+/// Parent data for use with [CachedTransitionStack].
 class _ParentData extends ContainerBoxParentData<RenderBox> {
   Key? key;
 }

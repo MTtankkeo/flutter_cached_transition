@@ -77,7 +77,7 @@ class _CachedTransitionState extends State<CachedTransition>
       _controller.attach(widget.child);
     }
 
-    return CacehdTransitionStack(
+    return CachedTransitionStack(
       primaryKey: widget.child.key!,
       secondaryKey: secondary,
       children: _controller.states.values.map((state) {
