@@ -29,7 +29,7 @@ class CachedTransitionState {
   }
 
   /// The widget associated with this transition state.
-  final Widget widget;
+  Widget widget;
 
   late final AnimationController _primaryAnimation;
   late final CurvedAnimation _primaryCurved;

@@ -32,14 +32,11 @@ class CachedTransitionStack extends MultiChildRenderObjectWidget {
 }
 
 class RenderCacehdTransitionStack extends RenderBox
-    with
-        ContainerRenderObjectMixin<RenderBox, _ParentData>,
-        RenderBoxContainerDefaultsMixin<RenderBox, _ParentData> {
+    with ContainerRenderObjectMixin<RenderBox, _ParentData>, RenderBoxContainerDefaultsMixin<RenderBox, _ParentData> {
   RenderCacehdTransitionStack({
-    required Key? primaryKey,
-    required Key? secondaryKey,
-  })  : _primaryKey = primaryKey,
-        _secondaryKey = secondaryKey;
+    required this._primaryKey,
+    required this._secondaryKey,
+  });
 
   Key? _primaryKey;
   Key? get primaryKey => _primaryKey!;
@@ -87,7 +84,7 @@ class RenderCacehdTransitionStack extends RenderBox
     primary?.layout(constraints, parentUsesSize: true);
     secondary?.layout(constraints, parentUsesSize: true);
 
-    size = primary?.size ?? Size.zero;
+    size = primary?.size ?? .zero;
   }
 
   @override
@@ -107,6 +104,7 @@ class RenderCacehdTransitionStack extends RenderBox
   }
 }
 
+/// Assigns a key to child parent data for identification by [CachedTransitionStack].
 class CachedTransitionStackParent extends ParentDataWidget<_ParentData> {
   const CachedTransitionStackParent({
     super.key,

@@ -21,9 +21,7 @@ class CachedTransitionController<T extends CachedTransitionState> {
     final T newState = createState(widget);
 
     if (states.isEmpty) {
-      context.initialAnimation
-          ? newState.fadeIn()
-          : newState.ensureFadeInCompleted();
+      context.initialAnimation ? newState.fadeIn() : newState.ensureFadeInCompleted();
     } else {
       // Subsequent widgets: always fade-in animation.
       newState.fadeIn();

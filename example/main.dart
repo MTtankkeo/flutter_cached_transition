@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cached_transition/flutter_cached_transition.dart';
 
 void main() {
-  runApp(const RootApp());
+  runApp(const MainApp());
 }
 
-class RootApp extends StatefulWidget {
-  const RootApp({super.key});
+class MainApp extends StatefulWidget {
+  const MainApp({super.key});
 
   @override
-  State<RootApp> createState() => _RootAppState();
+  State<MainApp> createState() => _MainAppState();
 }
 
-class _RootAppState extends State<RootApp> {
+class _MainAppState extends State<MainApp> {
   int _index = 0;
 
   @override
@@ -23,26 +23,22 @@ class _RootAppState extends State<RootApp> {
         body: SafeArea(
           child: Center(
             child: Column(
-              mainAxisSize: MainAxisSize.min,
+              mainAxisSize: .min,
               spacing: 15,
               children: [
                 CachedTransition(
-                  duration: Duration(milliseconds: 500),
+                  duration: .new(milliseconds: 500),
                   curve: Curves.ease,
-                  transitionBuilder: (
-                    Widget child,
-                    Animation<double> primaryAnimation,
-                    Animation<double> secondaryAnimation,
-                  ) {
+                  transitionBuilder: (child, primary, secondary) {
                     return FadeTransition(
-                      opacity: primaryAnimation,
+                      opacity: primary,
                       child: child,
                     );
                   },
                   child: Counter(key: ValueKey(_index)),
                 ),
                 Row(
-                  mainAxisSize: MainAxisSize.min,
+                  mainAxisSize: .min,
                   spacing: 8,
                   children: [
                     FilledButton(
@@ -83,7 +79,7 @@ class _CounterState extends State<Counter> {
     return GestureDetector(
       onTap: () => setState(() => count += 1),
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 60),
+        padding: .symmetric(vertical: 15, horizontal: 60),
         color: Colors.amber,
         child: Text(count.toString(), style: TextStyle(fontSize: 32)),
       ),
